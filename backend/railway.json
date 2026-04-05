@@ -1,9 +1,5 @@
 {
-  "build": {
-    "builder": "NIXPACKS",
-    "nixpacksConfigPath": "nixpacks.toml"
-  },
   "deploy": {
-    "startCommand": "gunicorn config.wsgi --bind 0.0.0.0:$PORT --workers 1"
+    "startCommand": "python manage.py migrate && python seed.py && gunicorn config.wsgi --bind 0.0.0.0:$PORT --workers 1"
   }
 }
