@@ -1,9 +1,9 @@
 {
   "build": {
-    "builder": "NIXPACKS"
+    "builder": "NIXPACKS",
+    "nixpacksConfigPath": "nixpacks.toml"
   },
   "deploy": {
-    "startCommand": "gunicorn config.wsgi --bind 0.0.0.0:$PORT --workers 1",
-    "healthcheckPath": "/api/auth/token/"
+    "startCommand": "gunicorn config.wsgi --bind 0.0.0.0:$PORT --workers 1"
   }
 }
